@@ -8,7 +8,7 @@ class InfosController < ApplicationController
       flash[:success] = 'メッセージを投稿しました'
       redirect_to root_url
     else
-      @infos = current_user.infos.order(id: :desc).page(params[:page])
+      @infos = current_user.feed_infos.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました'
       render 'toppages/index'
     end
