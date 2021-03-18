@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :infos, only: [:create, :destroy]
+  resources :infos, only: [:create, :destroy, :edit, :update]
   resources :relationships, only: [:create, :destroy]
 end

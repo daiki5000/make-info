@@ -13,6 +13,21 @@ class InfosController < ApplicationController
       render 'toppages/index'
     end
   end
+  
+  def edit
+    @info = Info.find(params[:id])
+  end
+  
+  def update
+    @info = Info.find(params[:id])
+    if @info.update(info_params)
+      flash[:success] = 'infoが更新されました'
+      redirect_to root_path
+    else
+      flash.now[:danger] = 'infoは更新されませんでした'
+      render :edit
+    end
+  end
 
   def destroy
     @info.destroy

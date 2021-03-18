@@ -1,0 +1,11 @@
+<h1>投稿したinfoの編集</h1>
+
+<%= form_with(model: @info, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+    
+  <%= f.submit '投稿', class: 'btn btn-success' %>
+<% end %>
+
+<%= link_to '一覧に戻る', root_path %>
